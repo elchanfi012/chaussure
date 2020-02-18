@@ -27,6 +27,7 @@ export class ChaussureService {
     );
   }
 
+
   handleError(error) {
     let errorMessage = '';
     if ( error.error instanceof ErrorEvent ) {
