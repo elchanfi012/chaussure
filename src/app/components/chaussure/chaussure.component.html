@@ -18,8 +18,7 @@
                 <td><a [routerLink]="['/chaussures/edit', chaussure.id]">
                         <fa-icon [icon]="faEdit"></fa-icon>
                     </a>
-                    <a class="deleteArticle" (click)="deleteArticle(chaussure.id)"
-                        style="margin-left:10px; color:red; cursor: pointer;">
+                    <a class="deleteChaussure" (click)="deleteChaussure(chaussure)" style="color: red;">
                         <fa-icon [icon]="faTrash"></fa-icon>
                     </a>
                 </td>

@@ -35,6 +35,10 @@ export class ChaussureService {
       catchError(this.handleError));
   }
 
+  removeChaussure(chaussure: Chaussure): Observable<Chaussure> {
+    return this.httpClient.delete<Chaussure>(this.apiURL + '/' + chaussure.id).pipe(retry(1),catchError(this.handleError));
+  }
+
 
   handleError(error) {
     let errorMessage = '';

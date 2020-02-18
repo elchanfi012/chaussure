@@ -28,4 +28,14 @@ export class ChaussureComponent implements OnInit {
     });
   }
 
+  deleteChaussure(chaussure: Chaussure): void {
+    this.isLoading = true;
+    this.chaussureService.removeChaussure(chaussure).subscribe(then => {
+      this.chaussureService.getChaussures().subscribe((data: Chaussure[]) => {
+        this.chaussures = data;
+        this.isLoading = false;
+      });
+    });
+  }
+
 }
