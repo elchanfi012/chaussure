@@ -1,1 +1,55 @@
-<p>add-chaussure works!</p>
+<h1>Ajouter une chaussure : </h1>
+<form #chaussureForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="nom">Nom :</label>
+        <input type="text" class="form-control" id="nom" name="nom" required [(ngModel)]="chaussure.nom"
+            #nom="ngModel">
+        <div [hidden]="nom.valid" class="alert alert-danger">
+            le nom de la chaussure est requis
+        </div>
+    </div>
+    <div class="form-group">
+        <div>
+            <label for="marque">Marque : </label>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label for="adidas"> Adidas  : </label>
+                <input type="radio" id="adidas" name="marque" value="adidas" required [(ngModel)]="chaussure.marque" #marque="ngModel">
+            </div>
+            <div class="col-4">
+                <label for="nike"> Nike  : </label>
+                <input type="radio" id="nike" name="marque" value="nike" required [(ngModel)]="chaussure.marque" #marque="ngModel">
+            </div>
+            <div class="col-4">
+                <label for="puma"> Puma  : </label>
+                <input type="radio" id="puma" name="marque" value="puma" required [(ngModel)]="chaussure.marque" #marque="ngModel">
+            </div>
+            
+        </div>
+        
+        <div [hidden]="marque.valid" class="alert alert-danger">
+            la marque de la chaussure est requise
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="type">Type :</label>
+        <select class="form-control" id="type" required [(ngModel)]="chaussure.type" name="type"
+            #type="ngModel">
+            <option *ngFor="let type of typeDispo" [value]="type">{{type}}</option>
+        </select>
+        <div [hidden]="type.valid" class="alert alert-danger">
+            Le type de la chaussure est requis
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="taille">Taille :</label>
+        <input type="number" class="form-control" id="taille" name="taille" required [(ngModel)]="chaussure.taille"
+            #taille="ngModel">
+        <div [hidden]="taille.valid" class="alert alert-danger">
+            La taille de la chaussure est requise
+        </div>
+    </div>
+    <input class="btn btn-success" id="submitBtn" type="submit" value="Valider" [disabled]="!chaussureForm.valid">
+</form>

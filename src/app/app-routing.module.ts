@@ -9,8 +9,8 @@ import { ChaussureComponent } from './components/chaussure/chaussure.component';
 const routes: Routes = [
   { path: '', redirectTo: 'chaussures', pathMatch: 'full'},
   { path: 'chaussures', component: ChaussureComponent },
-  { path: 'chaussures/:id', component: ChaussureDetailComponent },
   { path: 'chaussures/ajout', component: AddChaussureComponent },
+  { path: 'chaussures/:id', component: ChaussureDetailComponent },
   { path: 'chaussures/edit/:id', component: EditChaussreComponent }
 ];
 

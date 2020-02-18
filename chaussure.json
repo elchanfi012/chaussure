@@ -1,12 +1,20 @@
 {
-    "chaussures": [
-        {
-            "id": 1,
-            "nom": "f50",
-            "marque": "Adidas",
-            "type": "Football",
-            "taille": 43,
-            "dateEntryStock": "2012-04-23T18:25:43.511Z"
-        }
-    ]
+  "chaussures": [
+    {
+      "id": 1,
+      "nom": "f50",
+      "marque": "Adidas",
+      "type": "Football",
+      "taille": 43,
+      "dateEntryStock": "2012-04-23T18:25:43.511Z"
+    },
+    {
+      "id": 2,
+      "nom": "predator",
+      "marque": "adidas",
+      "type": "football",
+      "taille": 42,
+      "dateEntryStock": "2020-02-18T14:03:43.912Z"
+    }
+  ]
 }

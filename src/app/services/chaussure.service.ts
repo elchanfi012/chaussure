@@ -10,11 +10,10 @@ import { catchError, retry } from 'rxjs/internal/operators';
 export class ChaussureService {
   chaussures: Chaussure[];
   apiURL = 'http://localhost:3000/chaussures';
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-  };
+  httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
+  marqueDispo = ["adidas","nike", "puma"];
+  typeDispo = ["sport","ville", "football"];
+
   constructor(private httpClient: HttpClient) { 
     this.chaussures = [];
   }
@@ -25,6 +24,10 @@ export class ChaussureService {
 
   getChaussureById(id: number): Observable<Chaussure> {
     return this.httpClient.get<Chaussure>(this.apiURL + '/' + id).pipe(retry(1),catchError(this.handleError));
+  }
+
+  addChaussure(chaussure: Chaussure): Observable<Chaussure> {
+    return this.httpClient.post<Chaussure>(this.apiURL , chaussure, this.httpOptions).pipe(catchError(this.handleError));
   }
 
 
