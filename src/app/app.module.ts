@@ -8,7 +8,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { FormsModule }   from '@angular/forms';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ChaussureComponent } from './components/chaussure/chaussure.component';
 import { ChaussureDetailComponent } from './components/chaussure-detail/chaussure-detail.component';
 import { AddChaussureComponent } from './components/add-chaussure/add-chaussure.component';
@@ -18,7 +17,6 @@ import { MenuComponent } from './components/menu/menu.component';
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
     ChaussureComponent,
     ChaussureDetailComponent,
     AddChaussureComponent,
