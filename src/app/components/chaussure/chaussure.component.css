@@ -1,0 +1,10 @@
+.deleteArticle{
+    margin-left:10px; 
+    color:red; 
+    cursor: pointer;
+}
+
+.table{
+    max-width: 700px;
+    text-align: center;
+}

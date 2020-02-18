@@ -13,6 +13,7 @@ import { ChaussureDetailComponent } from './components/chaussure-detail/chaussur
 import { AddChaussureComponent } from './components/add-chaussure/add-chaussure.component';
 import { EditChaussreComponent } from './components/edit-chaussre/edit-chaussre.component';
 import { MenuComponent } from './components/menu/menu.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MenuComponent } from './components/menu/menu.component';
     FontAwesomeModule,
     CommonModule,
     ToastrModule.forRoot(),
-    FormsModule
+    FormsModule,
+    HttpClientModule
 
   ],
   providers: [],

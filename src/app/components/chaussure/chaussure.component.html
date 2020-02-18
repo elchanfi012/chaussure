@@ -1,1 +1,30 @@
-<p>chaussure works!</p>
+<a routerLink="/chaussure/ajout" id="addChaussureLink"><button class="btn btn-success">Ajouter chaussure</button> </a>
+<ng-container *ngIf="!isLoading">
+    <h1>Nombre de chaussures en stock : {{ nbChaussures }}</h1>
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="chaussure" *ngFor="let chaussure of chaussures">
+                <td>{{ chaussure.nom }}</td>
+                <td><a [routerLink]="['/chaussure/edit', chaussure.id]">
+                        <fa-icon [icon]="faEdit"></fa-icon>
+                    </a>
+                    <a class="deleteArticle" (click)="deleteArticle(chaussure.id)"
+                        style="margin-left:10px; color:red; cursor: pointer;">
+                        <fa-icon [icon]="faTrash"></fa-icon>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</ng-container>
+
+<ng-container *ngIf="isLoading">
+    <fa-icon [spin]="true" [icon]="faSpinner"></fa-icon>
+</ng-container>
