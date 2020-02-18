@@ -1,1 +1,20 @@
-<p>chaussure-detail works!</p>
+<a routerLink="/chaussures"><button class="btn btn-success">Revenir à la l'accueil</button></a>
+
+
+<ng-container *ngIf="!this.isLoading">
+    <div *ngIf="chaussure" class="text-center">
+        <h1>Nom : {{ chaussure.nom }}</h1>
+        <div> Marque : {{ chaussure.marque }}</div>
+        <div> Type : {{ chaussure.type }}</div>
+        <div> Taille : {{ chaussure.taille }}</div>
+        <div>Date d'entrée en stock : {{chaussure.dateEntryStock| date:'longDate'}}</div>
+
+    </div>
+    <div *ngIf="!chaussure">
+        Cette chaussure n'existe pas
+    </div>
+</ng-container>
+
+<ng-container *ngIf="isLoading">
+    <fa-icon [spin]="true" [icon]="faSpinner"></fa-icon>
+</ng-container>

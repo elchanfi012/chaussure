@@ -1,4 +1,4 @@
-<a routerLink="/chaussure/ajout" id="addChaussureLink"><button class="btn btn-success">Ajouter chaussure</button> </a>
+<a routerLink="/chaussures/ajout" id="addChaussureLink"><button class="btn btn-success">Ajouter chaussure</button> </a>
 <ng-container *ngIf="!isLoading">
     <h1>Nombre de chaussures en stock : {{ nbChaussures }}</h1>
 
@@ -11,8 +11,11 @@
         </thead>
         <tbody>
             <tr class="chaussure" *ngFor="let chaussure of chaussures">
-                <td>{{ chaussure.nom }}</td>
-                <td><a [routerLink]="['/chaussure/edit', chaussure.id]">
+                <td><a [routerLink]="['/chaussures/', chaussure.id]"> 
+                    {{ chaussure.nom }}
+                    </a>
+                </td>
+                <td><a [routerLink]="['/chaussures/edit', chaussure.id]">
                         <fa-icon [icon]="faEdit"></fa-icon>
                     </a>
                     <a class="deleteArticle" (click)="deleteArticle(chaussure.id)"
