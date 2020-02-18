@@ -30,6 +30,11 @@ export class ChaussureService {
     return this.httpClient.post<Chaussure>(this.apiURL , chaussure, this.httpOptions).pipe(catchError(this.handleError));
   }
 
+  editChaussure(chaussure: Chaussure) {
+    return this.httpClient.put<Chaussure>(this.apiURL + '/' + chaussure.id , chaussure, this.httpOptions).pipe(
+      catchError(this.handleError));
+  }
+
 
   handleError(error) {
     let errorMessage = '';

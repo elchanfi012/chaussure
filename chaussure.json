@@ -3,8 +3,8 @@
     {
       "id": 1,
       "nom": "f50",
-      "marque": "Adidas",
-      "type": "Football",
+      "marque": "adidas",
+      "type": "sport",
       "taille": 43,
       "dateEntryStock": "2012-04-23T18:25:43.511Z"
     },
